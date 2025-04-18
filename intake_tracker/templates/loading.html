@@ -1,0 +1,71 @@
+<!-- loading.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Your Plan...</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #181818;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+        .loader {
+            text-align: center;
+        }
+        .barbell {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .bar {
+            height: 15px;
+            width: 150px;
+            background-color: #fff;
+        }
+        .weight {
+            width: 30px;
+            height: 30px;
+            background-color: #ff4500;
+            margin: 0 10px;
+            border-radius: 50%;
+        }
+        .lift {
+            animation: lift 1s infinite alternate;
+        }
+        @keyframes lift {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-50px);
+            }
+        }
+        .loading-text {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="loader">
+        <!-- Barbell animation -->
+        <div class="barbell">
+            <div class="weight lift"></div>
+            <div class="bar lift"></div>
+            <div class="weight lift"></div>
+        </div>
+        <div class="loading-text">
+            <p>Generating your personalized workout and diet plan...</p>
+            <p>Get ready to lift!</p>
+        </div>
+    </div>
+</body>
+</html>

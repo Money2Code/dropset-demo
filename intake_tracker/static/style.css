@@ -1,0 +1,839 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #1a1a1d;
+    /* Dark theme background */
+    color: #c7c7c7;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Navbar Styling */
+/* .navbar {
+    background-color: #111;
+    size: 200px;
+    
+    padding: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+} */
+
+.navbar {
+    background-color: #111; /* Dark navbar */
+    padding: 2rem 1rem; /* Increased vertical padding, existing horizontal */
+    min-height: 80px; /* Set a minimum height */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+.navbar-brand,
+.nav-link {
+    color: #c7c7c7 !important;
+    font-weight: 1000;
+}
+
+.navbar-brand:hover,
+.nav-link:hover {
+    color: #28a745 !important;
+}
+
+
+
+/* Header Section */
+header {
+    background: url('https://example.com/fitness-banner-dark.jpg') no-repeat center center/cover;
+    height: 90vh;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 2s ease-in-out;
+}
+
+header h1 {
+    font-size: 3.5rem;
+    font-weight: 600;
+    text-shadow: 2px 2px 5px #000;
+}
+
+header p {
+    font-size: 1.5rem;
+}
+
+.navbar {
+    padding: 0;
+  }
+  
+  .navbar ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    align-items: center;
+    font-weight: 600;
+  }
+  
+  .navbar li {
+    position: relative;
+  }
+  
+  .navbar a,
+  .navbar a:focus {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0 10px 30px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    white-space: nowrap;
+    transition: 0.3s;
+  }
+  
+  .navbar a i,
+  .navbar a:focus i {
+    font-size: 12px;
+    line-height: 0;
+    margin-left: 5px;
+  }
+  
+  .navbar a:hover,
+  .navbar .active,
+  .navbar .active:focus,
+  .navbar li:hover>a {
+    color: #28a745;
+  }
+  
+  .navbar .dropdown ul {
+    display: block;
+    position: absolute;
+    left: 14px;
+    top: calc(100% + 30px);
+    margin: 0;
+    padding: 10px 0;
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    background: #fff;
+    box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+    transition: 0.3s;
+  }
+  
+  .navbar .dropdown ul li {
+    min-width: 200px;
+  }
+  
+  .navbar .dropdown ul a {
+    padding: 10px 20px;
+    font-size: 14px;
+    text-transform: none;
+    color: #151515;
+    font-weight: 400;
+  }
+  
+  .navbar .dropdown ul a i {
+    font-size: 12px;
+  }
+  
+  .navbar .dropdown ul a:hover,
+  .navbar .dropdown ul .active:hover,
+  .navbar .dropdown ul li:hover>a {
+    background-color: #28a745;
+  }
+  
+  .navbar .dropdown:hover>ul {
+    opacity: 1;
+    top: 100%;
+    visibility: visible;
+  }
+  
+  .navbar .dropdown .dropdown ul {
+    top: 0;
+    left: calc(100% - 30px);
+    visibility: hidden;
+  }
+  
+  .navbar .dropdown .dropdown:hover>ul {
+    opacity: 1;
+    top: 0;
+    left: 100%;
+    visibility: visible;
+  }
+  
+  @media (max-width: 1366px) {
+    .navbar .dropdown .dropdown ul {
+      left: -90%;
+    }
+  
+    .navbar .dropdown .dropdown:hover>ul {
+      left: -100%;
+    }
+  }
+
+.fa.fa-bolt {
+    color: #28a745;
+    font-size: 3rem;
+    transition: transform 0.3s ease-in-out;
+}
+@keyframes shake {
+    0%, 100% { transform: translate(0px, 0px) rotate(0deg); }
+    10%, 90% { transform: translate(-2px, 1px) rotate(-1deg); }
+    20%, 80% { transform: translate(2px, -1px) rotate(1deg); }
+    30%, 50%, 70% { transform: translate(-1px, 1px) rotate(0deg); }
+    40%, 60% { transform: translate(1px, -1px) rotate(-1deg); }
+}
+
+/* Apply the animation to the icon */
+.shake-icon {
+    animation: shake 0.5s infinite;
+    display: inline-block; /* Ensure it displays inline */
+    
+}
+
+  
+  /**
+  * Mobile Navigation 
+  */
+  .mobile-nav-toggle {
+    color: #fff;
+    font-size: 28px;
+    cursor: pointer;
+    display: none;
+    line-height: 0;
+    transition: 0.5s;
+  }
+  
+  @media (max-width: 991px) {
+    .mobile-nav-toggle {
+      display: block;
+    }
+  
+    .navbar ul {
+      display: none;
+    }
+  }
+  
+  .navbar-mobile {
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.9);
+    transition: 0.3s;
+    z-index: 999;
+  }
+  
+  .navbar-mobile .mobile-nav-toggle {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+  }
+  
+  .navbar-mobile ul {
+    display: block;
+    position: absolute;
+    top: 55px;
+    right: 15px;
+    bottom: 15px;
+    left: 15px;
+    padding: 10px 0;
+    background-color: #fff;
+    overflow-y: auto;
+    transition: 0.3s;
+  }
+  
+  .navbar-mobile a,
+  .navbar-mobile a:focus {
+    padding: 10px 20px;
+    font-size: 15px;
+    color: #151515;
+  }
+  
+  .navbar-mobile a:hover,
+  .navbar-mobile .active,
+  .navbar-mobile li:hover>a {
+    color: #151515;
+    background-color: #28a745;
+  }
+  
+  .navbar-mobile .getstarted,
+  .navbar-mobile .getstarted:focus {
+    margin: 15px;
+  }
+  
+  .navbar-mobile .dropdown ul {
+    position: static;
+    display: none;
+    margin: 10px 20px;
+    padding: 10px 0;
+    z-index: 99;
+    opacity: 1;
+    visibility: visible;
+    background: #fff;
+    box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+  }
+  
+  .navbar-mobile .dropdown ul li {
+    min-width: 200px;
+  }
+  
+  .navbar-mobile .dropdown ul a {
+    padding: 10px 20px;
+    color: #151515;
+  }
+  
+  .navbar-mobile .dropdown ul a i {
+    font-size: 12px;
+  }
+  
+  .navbar-mobile .dropdown ul a:hover,
+  .navbar-mobile .dropdown ul .active:hover,
+  .navbar-mobile .dropdown ul li:hover>a {
+    background-color: #28a745;
+  }
+  
+  .navbar-mobile .dropdown>.dropdown-active {
+    display: block;
+  }
+  
+
+
+/* header .btn {
+    margin-top: 20px;
+    padding: 8px 15px;
+    background-color: #28a745;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    width: 120px;/* Auto width to fit content */
+    /* display: inline-block; /* Ensure the button only takes necessary width */
+    /* text-align: center; /* Center text inside button */
+    /* white-space: nowrap; */ 
+/* }  */
+
+header .btn {
+    margin-top: 20px;
+    padding: 5px 10px !important; /* Force padding to be smaller */
+    background-color: #28a745 !important;
+    border: none !important;
+    color: #fff !important;
+    font-size: 1rem !important; /* Make font size smaller */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3) !important;
+    transition: all 0.3s ease !important;
+    width: auto !important; /* Force width to adjust according to content */
+    display: inline-block !important; /* Ensure button takes up only necessary width */
+    text-align: center !important;
+    white-space: nowrap !important; /* Prevent text wrapping */
+    max-width: 150px !important; /* Optional: Add a maximum width constraint */
+}
+
+
+
+header .btn:hover {
+    background-color: #218838;
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
+    transform: translateY(-3px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes flipIn {
+    from {
+        transform: rotateY(90deg);
+    }
+
+    to {
+        transform: rotateY(0deg);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Calculator Section */
+
+/* .calculateCalories{
+    width: 10px;
+} */
+
+.calculator {
+    background-color: #2a2a2d;
+    height: 1000px; /* Set a specific height for the calculator section */
+    padding-top: 20px; /* Optional: adjust the padding for spacing */
+    padding-bottom: 20px;
+    /* Dark card */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: slideUp 1s ease-in-out;
+}
+
+.calculator:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6);
+}
+
+.form-control,
+.form-select {
+    background-color: #1a1a1d;
+    color: #c7c7c7;
+    border: 1px solid #333;
+}
+
+.form-control:focus,
+.form-select:focus {
+    box-shadow: none;
+    border-color: #28a745;
+}
+
+.btn-calculate {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btn-calculate:hover {
+    background-color: #218838;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    transform: translateY(-3px);
+}
+
+/* Flip Card Results */
+.flip-card {
+    perspective: 1000px;
+    margin-top:110px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    margin-top: 20px;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.flip-card-front {
+    background-color: #28a745;
+    color: white;
+}
+
+.flip-card-back {
+    background-color: #2a2a2d;
+    color: #fff;
+    transform: rotateY(180deg);
+}
+
+/* Progress Bars for Diet */
+.progress {
+    height: 20px;
+    background-color: #444;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    background-color: #28a745;
+    transition: width 1s ease-in-out;
+}
+
+/* Footer */
+footer {
+    background-color: #111;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Moving Icons for Fun */
+.fas.fa-dumbbell {
+    color: #28a745;
+    font-size: 3rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+.fas.fa-dumbbell:hover {
+    transform: rotate(360deg) scale(1.2);
+}
+header {
+    background: url('https://example.com/fitness-banner-dark.jpg') no-repeat center center/cover;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    position: relative;
+  }
+
+  /* Fade-in Animations */
+  .fade-in {
+    opacity: 0;
+    animation: fadeInEffect 1.5s ease-out forwards;
+  }
+
+  .fade-in-delay {
+    margin-top: 20px;
+    opacity: 0;
+    animation: fadeInEffect 2s ease-out forwards;
+  }
+
+  @keyframes fadeInEffect {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Slide-Up Animation for Icon */
+  .slide-up {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideUpEffect 2s ease-out forwards;
+  }
+
+  @keyframes slideUpEffect {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Animated Button Styles */
+  .btn-animated {
+    padding: 12px 30px;
+    background-color: #28a745;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  .btn-animated:hover {
+    background-color: #218838;
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
+    transform: translateY(-3px);
+  }
+
+  /* Glowing Text Effect for h1 */
+  h1 {
+    font-size: 3.5rem;
+    font-weight: 600;
+    text-shadow: 0px 0px 10px rgba(0, 255, 0, 0.7);
+  }
+
+  /* Icon Animation: Rotate and Bounce */
+  .fas.fa-dumbbell {
+      color: #28a745;
+      font-size: 3rem;
+      transition: transform 0.3s ease-in-out;
+  }
+
+  .fas.fa-dumbbell:hover {
+      transform: rotate(360deg) scale(1.2);
+  }
+
+  @keyframes rotateBounce {
+    0% {
+      transform: rotate(0deg) scale(0.8);
+      opacity: 0;
+    }
+    50% {
+      transform: rotate(180deg) scale(1.2);
+      opacity: 1;
+    }
+    100% {
+      transform: rotate(360deg) scale(1);
+    }
+  }
+
+  .diet-plan {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.diet-item {
+    display: flex;
+    align-items: center;
+    background-color: #1a1a1d;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.diet-item:hover {
+    transform: translateY(-5px);
+}
+
+.diet-item i {
+    color: #28a745;
+    font-size: 1.5rem;
+    margin-right: 15px;
+}
+
+.diet-item span {
+    font-size: 1.2rem;
+    color: #c7c7c7;
+}
+
+.diet-item strong {
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Signup Form Styles */
+.signup-section {
+    padding: 60px 0;
+    background-color: #1a1a1d;
+    color: white;
+}
+
+.signup-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #222;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.signup-form h2 {
+    
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #28a745;
+    border-radius: 5px;
+    background-color: white;
+    color: white;
+}
+
+.form-group input:focus {
+    border-color: #fff;
+    outline: none;
+}
+
+.btn-lg {
+    width: 100%;
+    padding: 12px;
+    background-color: #28a745;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-lg:hover {
+    background-color: #218838;
+}
+
+/* Services Section */
+.services {
+    padding: 50px 0;
+    background-color: #1a1a1d;
+    text-align: center;
+}
+
+.services .heading {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+.services .heading span {
+    color: #218838;
+}
+
+/* Service Container */
+/* .service-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 0 0px;
+} */
+
+.service-container {
+    display: flex;
+    justify-content: space-between; /* Adds space between the forms */
+    flex-wrap: wrap; /* Ensures responsiveness for smaller screens */
+}
+
+/* Service Box Styling */
+.service-box {
+    background-color: #218838;
+    border-radius: 15px;
+    padding: 30px;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    position: relative;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.service-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.service-box i {
+    font-size: 3rem;
+    color: #218838;
+    margin-bottom: 20px;
+}
+
+.service-box h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.service-box p {
+    font-size: 1rem;
+    color: white;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.service-box .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border-radius: 25px;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease;
+}
+
+.service-box .btn:hover {
+    background-color: #218838;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .service-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-box {
+        width: 100%;
+        max-width: 400px;
+    }
+}
+
+
+
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.loading-content {
+    text-align: center;
+}
+
+.fa-carrot {
+    color: #fff;
+    font-size: 3rem;
+}
+
+.loading-text {
+    margin-top: 10px;
+    font-size: 1.5rem;
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0deg); /* Start at 0 degrees */
+    }
+    100% {
+        transform: rotate(360deg); /* Rotate to 360 degrees */
+    }
+}
+
+
+
+.workout-plan {
+  overflow: visible; /* Ensure all content is visible */
+  height: auto; /* Let height adapt to content */
+}
+.workout-plan h2, .workout-plan h3, .workout-plan div {
+  page-break-inside: avoid; /* Prevents breaking headings or sections */
+}

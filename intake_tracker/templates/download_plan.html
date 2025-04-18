@@ -1,0 +1,78 @@
+
+
+<!-- ----------------------new updated meal plan----------------------- -->
+
+{% extends 'base.html' %}
+
+{% block title %}Home - Choose Goals{% endblock %}
+
+{% block content %}
+<!-- Main Content -->
+<div id="workout-plan" class="workout-plan">
+    <h2>Your Personalized Workout & Diet Plan</h2>
+    
+    <h3>Workout Schedule:</h3>
+    <div id="workout-schedule">
+        <pre>{{ ai_generated_plan|safe }}</pre>
+    </div>
+
+    <!-- Display User's Goal -->
+    <div class="goal-info my-4">
+        <h3><i class="fas fa-bullseye"></i> Your Goal: {{ goal }}</h3>
+    </div>
+
+    <!-- Display Calories and Macros -->
+    <div class="calories-macros my-4">
+        <h3><i class="fas fa-calculator"></i> Meal Plan Breakdown</h3>
+        <p><strong>Calories: </strong>{{ calories }}</p>
+        <p><strong>Macros:</strong></p>
+        <ul>
+            <li><strong>Protein:</strong> {{ macros.protein }}g</li>
+            <li><strong>Carbs:</strong> {{ macros.carbs }}g</li>
+            <li><strong>Fats:</strong> {{ macros.fats }}g</li>
+        </ul>
+    </div>
+
+    <!-- Update Meal Plan Section -->
+    <h3>Update Your Meal Plan</h3>
+
+    <div class="container my-5">
+        <div class="text-center">
+            <h2 class="mb-4">
+                <i class="fas fa-utensils text-warning"></i> Update Your Diet Plan
+            </h2>
+        </div>
+    
+        <!-- Form to Modify Diet Plan -->
+        <div class="mb-4">
+            <h3><i class="fas fa-edit text-success"></i> Update Your Meal Plan</h3>
+            <form method="post" action="{% url 'update_meal_plan' %}">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="meal-type" class="form-label"><i class="fas fa-utensil-spoon"></i> Select Meal:</label>
+                    <select name="meal_type" id="meal-type" class="form-select" required>
+                        <option value="breakfast">Breakfast</option>
+                        <option value="lunch">Lunch</option>
+                        <option value="dinner">Dinner</option>
+                    </select>
+                </div>
+    
+                <div class="mb-3">
+                    <label for="custom-meal" class="form-label">
+                        <i class="fas fa-carrot"></i> Enter Your Custom Meal/Ingredients:
+                    </label>
+                    <input type="text" name="custom_meal" id="custom-meal" class="form-control"
+                        placeholder="E.g., Oatmeal with nuts" required>
+                </div>
+    
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-save"></i> Update Meal Plan
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+

@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact Us{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h2 class="text-center mt-4 mb-4">Get in Touch</h2>
+
+            <!-- Messages for success or failure -->
+            {% for message in messages %}
+            <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+                <strong></strong> {{message}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endfor %}
+            
+            <!-- Contact Form -->
+            <form action="{% url 'contact' %}" method="POST" class="p-4 shadow-sm rounded bg-dark form-limited-width">
+                {% csrf_token %}
+                
+                <div class="form-group mb-3">
+                    <input type="text" class="form-control" name="fullname" placeholder="Your Name" required>
+                </div>
+                
+                <div class="form-group mb-3">
+                    <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+                </div>
+
+                <div class="form-group mb-3">
+                    <input type="number" class="form-control" name="num" placeholder="Your Phone Number" required>
+                </div>
+                
+                <div class="form-group mb-4">
+                    <label for="desc" class="text-light">How can I help you?</label>
+                    <textarea class="form-control mt-2" name="desc" cols="5" rows="4" id="desc" placeholder="Write your message here..."></textarea>
+                </div>
+                
+                <div class="d-grid">
+                    <button class="btn btn-success btn-lg btn-block" type="submit">Send Message</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<style>
+    .btn-success {
+        background-color: #28a745;
+        border-color: #28a745;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .btn-success:hover {
+        background-color: #218838;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Dark Theme for Form */
+    .bg-dark {
+        background-color: #1a1a1d !important;
+        color: #c7c7c7;
+    }
+
+    .form-control {
+        background-color: #2a2a2d;
+        color: #c7c7c7;
+        border: 1px solid #444;
+        border-radius: 0.375rem;
+        transition: box-shadow 0.3s ease;
+    }
+
+    .form-control:focus {
+        border-color: #28a745;
+        box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+    }
+
+    /* Set maximum width for form */
+    .form-limited-width {
+        max-width: 500px; /* Limit the form's width */
+        margin: 0 auto; /* Center the form */
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+        .form-limited-width {
+            max-width: 100%;
+        }
+        .container {
+            padding: 0 1.5rem;
+        }
+    }
+
+    /* Fade-in Animation for Container */
+    .container {
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+</style>
+
+{% endblock %}
